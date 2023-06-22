@@ -21,6 +21,7 @@
 		D2A5F2211F4A96D0005CD714 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A5F2201F4A96D0005CD714 /* AppDelegate.swift */; };
 		ED917A632A44E99A0046645E /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED917A622A44E99A0046645E /* Box.swift */; };
 		ED917A652A44EB000046645E /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED917A642A44EB000046645E /* WeatherViewModel.swift */; };
+		ED917A672A44F5190046645E /* WeatherViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED917A662A44F5190046645E /* WeatherViewModelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		D2A5F2201F4A96D0005CD714 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ED917A622A44E99A0046645E /* Box.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
 		ED917A642A44EB000046645E /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
+		ED917A662A44F5190046645E /* WeatherViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 			children = (
 				3853FB7A237B8D1D00835B42 /* WeatherbitDataTests.swift */,
 				3864C3ED237CC1F4000C9CA0 /* LocationGeocoderTests.swift */,
+				ED917A662A44F5190046645E /* WeatherViewModelTests.swift */,
 				3853FB7C237B8D1D00835B42 /* Info.plist */,
 				3853FB87237B9C0100835B42 /* WeatherbitExample.json */,
 			);
@@ -275,6 +278,7 @@
 			files = (
 				3864C3EE237CC1F4000C9CA0 /* LocationGeocoderTests.swift in Sources */,
 				3853FB7B237B8D1D00835B42 /* WeatherbitDataTests.swift in Sources */,
+				ED917A672A44F5190046645E /* WeatherViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
