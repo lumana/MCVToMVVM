@@ -39,6 +39,26 @@ public class WeatherViewModel {
   private static let defaultAddress = "McGaheysville, VA"
   private let geocoder = LocationGeocoder()
   let locationName = Box("Loading...")
+  
+  private let dateFormatter: DateFormatter = {
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "EEEE, MMM d"
+    return dateFormatter
+  }()
+  
+  let date = Box(" ")
+  
+  private let tempFormatter: NumberFormatter = {
+    let tempFormatter = NumberFormatter()
+    tempFormatter.numberStyle = .none
+    return tempFormatter
+  }()
+  
+  let icon: Box<UIImage?> = Box(nil)  //no image initially
+  let summary = Box(" ")
+  let forecastSummary = Box(" ")
+
+  
 
   init() {
     changeLocation(to: Self.defaultAddress)
@@ -47,6 +67,12 @@ public class WeatherViewModel {
   
   func changeLocation(to newLocation: String) {
     locationName.value = "Loading..."
+    self.locationName.value = "Not found"
+    self.date.value = ""
+    self.icon.value = nil
+    self.summary.value = ""
+    self.forecastSummary.value = ""
+    
     geocoder.geocode(addressString: newLocation) { [weak self] locations in
       guard let self = self else { return }
       if let location = locations.first {
@@ -67,6 +93,14 @@ public class WeatherViewModel {
           else {
             return
           }
+        
+        self.date.value = self.dateFormatter.string(from: weatherData.date)
+        self.icon.value = UIImage(named: weatherData.iconName)
+        let temp = self.tempFormatter
+          .string(from: weatherData.currentTemp as NSNumber) ?? ""
+        self.summary.value = "\(weatherData.description) - \(temp)℉"
+        self.forecastSummary.value = "\nSummary: \(weatherData.description)"
+
     }
   }
 
